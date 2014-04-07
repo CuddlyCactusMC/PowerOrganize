@@ -10,7 +10,7 @@ open cmd or powershell and type for help:
 
 Help Exerpt:
 
-	PowerOrganize.exe is used to organize files based on filetype.
+	PowerOrganize.ps1 is used to organize files based on filetype.
 	WARNING! DO NOT USE THE -Yank FUNCTION IF FOLDER INTEGRITY IS NESSECARY
 	Write-Host
 	Command:               Description:
