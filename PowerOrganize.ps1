@@ -8,7 +8,7 @@ param (
 Set-Location "$RF"
 function Show-Help
 {
-	Write-Host 'PowerOrganize.exe is used to organize files based on filetype.'
+	Write-Host 'PowerOrganize.ps1 is used to organize files based on filetype.'
 	Write-Host 'WARNING! DO NOT USE THE -Yank FUNCTION IF FOLDER INTEGRITY IS NESSECARY'
 	Write-Host
 	Write-Host 'Command:               Description:'
