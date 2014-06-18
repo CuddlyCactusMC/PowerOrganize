@@ -11,7 +11,7 @@ open cmd or powershell and type for help:
 Help Exerpt:
 
 	PowerOrganize v2.1
-	PowerOrganize.ps1 is used to organize files based on filetype.
+	PowerOrganize.ps1 is used to organize files based on filetype, and date.
 	WARNING! DO NOT USE THE -Yank FUNCTION IF FOLDER INTEGRITY IS NESSECARY
 	
 	Command:               Description:
