@@ -20,10 +20,9 @@ Help Exerpt:
 	-Help                  Displays this HelpFile.
 	-Type                  Organize files by file type.
 	-Date                  Organize files by date created.
-	-Yank                  "Yanks" all files in the folder out of its subfolder and into its root.
 	-NoDupe                Forcibly removes any duplicates based on file hash.
 
 	Write-Host Example:
-	Write-Host .\PowerOrganize.ps1 -RF "C:\Users\Joe\Documents" -XC "C:\Windows, C:\Settings" -Yank
+	Write-Host .\PowerOrganize.ps1 -RF "C:\Users\Joe\Documents" -XC "C:\Windows, C:\Settings" -Type -NoDupe
 
 THIS PROGRAM, IF RUN ON A WINDOWS SYSTEM FOLDER WILL DESTROY ITS FILE STRUCTURE, USE THIS PROGRAM ONLY ON DOCUMENTS FOLDERS!
