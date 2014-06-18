@@ -8,9 +8,9 @@ param (
     [switch]$Date,
     [switch]$Type
 )
-New-Item -Path "$env:APPDATA" -Value "PowerOrganize" -ItemType Directory -Force
-New-Item -Path "$env:APPDATA\PowerOrganize" -Value "DateOrg" -ItemType Directory -Force
-New-Item -Path "$env:APPDATA\PowerOrganize" -Value "TypeOrg" -ItemType Directory -Force
+New-Item -Path "$env:APPDATA" -Value "PowerOrganize" -ItemType Directory -Force | Out-Null
+New-Item -Path "$env:APPDATA\PowerOrganize" -Value "DateOrg" -ItemType Directory -Force | Out-Null
+New-Item -Path "$env:APPDATA\PowerOrganize" -Value "TypeOrg" -ItemType Directory -Force | Out-Null
 $dateorg = "$env:APPDATA\PowerOrganize\DateOrg"
 $dateorg = "$env:APPDATA\PowerOrganize\TypeOrg"
 Set-Location "$RF"
@@ -272,6 +272,7 @@ $file_md5_same_non_overwrite_arrary = @()
 }
 function Show-Help
 {
+    Write-Host 'PowerOrganize v2.1'
     Write-Host 'PowerOrganize.ps1 is used to organize files based on filetype.'
     Write-Host 'WARNING! DO NOT USE THE -Yank FUNCTION IF FOLDER INTEGRITY IS NESSECARY'
     Write-Host
