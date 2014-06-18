@@ -12,7 +12,7 @@ New-Item -Path "$env:APPDATA" -Value "PowerOrganize" -ItemType Directory -Force 
 New-Item -Path "$env:APPDATA\PowerOrganize" -Value "DateOrg" -ItemType Directory -Force | Out-Null
 New-Item -Path "$env:APPDATA\PowerOrganize" -Value "TypeOrg" -ItemType Directory -Force | Out-Null
 $dateorg = "$env:APPDATA\PowerOrganize\DateOrg"
-$dateorg = "$env:APPDATA\PowerOrganize\TypeOrg"
+$typeorg = "$env:APPDATA\PowerOrganize\TypeOrg"
 Set-Location "$RF"
 if ($PSVersionTable.PSVersion  -lt "3.0"){
 Write-Warning "Powershell must be at least version 3.0"
@@ -312,9 +312,9 @@ function Force-Refile
 	# get a list of files grouped by extension
 	$files = gci $RF | Where-Object { -not $_.PSisContainer } | Group-Object Extension
 	# create a subfolder for each type if necessary
-	$files | ForEach-Object { New-Item -itemType directory -path $typeorg\$($_.Name) -ea SilentlyContinue }
+	$files | ForEach-Object { New-Item -itemType directory -path $typeorg\$($_.Name) -ea Continue}
 	# move files into the appropriate subfolder
-	$files | ForEach-Object { $_.Group | Move-Item -destination $typeorg\$($_.Extension)\$($_.Name) -Force }
+	$files | ForEach-Object {$_.Group | Move-Item -destination $typeorg\$($_.Extension)\$($_.Full) -Force}
     Move-Item -Path "$typeorg\*" -Destination "$RF" -Force
 }
 if ($Help -eq $true)
