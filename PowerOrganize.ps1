@@ -272,21 +272,19 @@ $file_md5_same_non_overwrite_arrary = @()
 }
 function Show-Help
 {
-	Write-Host 'PowerOrganize v2.1'
-	Write-Host 'PowerOrganize.ps1 is used to organize files based on filetype.'
-	Write-Host 'WARNING! DO NOT USE THE -Yank FUNCTION IF FOLDER INTEGRITY IS NESSECARY'
-	Write-Host
-	Write-Host 'Command:               Description:'
-	Write-Host '-RF "pathtofolder"     This is the path of the folder to organize.'
-	Write-Host '-XC "path1, path2"     Folders to exclude from yanking.'
-	Write-Host '-Help                  Displays this HelpFile.'
-	Write-Host '-Type                  Organize files by file type.'
-    Write-Host '-Date                  Organize files by date created.'
-	Write-Host '-Yank                  "Yanks" all files in the folder out of its subfolder and into its root.'
-	Write-Host '-NoDupe                Forcibly removes any duplicates based on file hash.'
+    Write-Host 'PowerOrganize.ps1 is used to organize files based on filetype.'
+    Write-Host 'WARNING! DO NOT USE THE -Yank FUNCTION IF FOLDER INTEGRITY IS NESSECARY'
     Write-Host
-	Write-Host 'Example:'
-	Write-Host '.\PowerOrganize.ps1 -RF "C:\Users\Joe\Documents" -XC "C:\Windows, C:\Settings" -Yank -Force'
+    Write-Host 'Command:               Description:'
+    Write-Host '-RF "pathtofolder"     This is the path of the folder to organize.'
+    Write-Host '-XC "path1, path2"     Folders to exclude from yanking.'
+    Write-Host '-Help                  Displays this HelpFile.'
+    Write-Host '-Type                  Organize files by file type.'
+    Write-Host '-Date                  Organize files by date created.'
+    Write-Host '-NoDupe                Forcibly removes any duplicates based on file hash.'
+    Write-Host
+    Write-Host 'Example:'
+    Write-Host '.\PowerOrganize.ps1 -RF "C:\Users\Joe\Documents" -XC "C:\Windows, C:\Settings" -Type -NoDupe'
 }
 function Yank
 {
@@ -340,13 +338,6 @@ else
 }
     if ($Type -eq $true)
     {
-        if ($Yank -eq $true)
-		{
-			Force-Yank
-			Force-Refile
-		}
-		else
-		{
-			Refile
-		}
+   		Force-Yank
+		Force-Refile
     }
