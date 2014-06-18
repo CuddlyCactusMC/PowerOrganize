@@ -305,7 +305,7 @@ function Refile
 	$files | ForEach-Object { New-Item -itemType directory -path $typeorg\$($_.Name) -ea SilentlyContinue }
 	# move files into the appropriate subfolder
 	$files | ForEach-Object { $_.Group | Move-Item -destination $typeorg\$($_.Extension)\$($_.Name) }
-    Move-Item -Path "$typeorg\*" -Destination "$RF"
+    Move-Item -Path "$typeorg\*" -Destination "$RF" -Force
 }
 function Force-Refile
 {
@@ -315,6 +315,7 @@ function Force-Refile
 	$files | ForEach-Object { New-Item -itemType directory -path $typeorg\$($_.Name) -ea Continue}
 	# move files into the appropriate subfolder
 	$files | ForEach-Object {$_.Group | Move-Item -destination $typeorg\$($_.Extension)\$($_.Name) -Force}
+    Remove-Item "$RF\*" -Recurse -Force
     Move-Item -Path "$typeorg\*" -Destination "$RF" -Force
 }
 if ($Help -eq $true)
