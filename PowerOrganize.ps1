@@ -314,7 +314,7 @@ function Force-Refile
 	# create a subfolder for each type if necessary
 	$files | ForEach-Object { New-Item -itemType directory -path $typeorg\$($_.Name) -ea Continue}
 	# move files into the appropriate subfolder
-	$files | ForEach-Object {$_.Group | Move-Item -destination $typeorg\$($_.Extension)\$($_.Full) -Force}
+	$files | ForEach-Object {$_.Group | Move-Item -destination $typeorg\$($_.Extension)\$($_.Name) -Force}
     Move-Item -Path "$typeorg\*" -Destination "$RF" -Force
 }
 if ($Help -eq $true)
