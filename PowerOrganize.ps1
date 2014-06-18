@@ -327,7 +327,7 @@ else
   {
     if ($NoDupe -eq $true)
     {
-    Delete-Duplicates -Path "$RF"
+        Delete-Duplicates -Path "$RF"
     }
     if ($Date -eq $true)
     {
@@ -335,10 +335,9 @@ else
     Remove-Item "$RF\*" -Recurse -Force
     Move-Item -Path "$dateorg\*" -Destination "$RF" -Force
     }
-  }
-}
     if ($Type -eq $true)
     {
    		Force-Yank
 		Force-Refile
     }
+}
