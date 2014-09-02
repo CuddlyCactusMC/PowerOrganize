@@ -4,7 +4,7 @@ PowerOrganize requires the latest Powershell and .NET release(You should update 
 
 THIS PROGRAM, IF RUN ON A WINDOWS SYSTEM FOLDER WILL DESTROY ITS FILE STRUCTURE, USE THIS PROGRAM ONLY ON DOCUMENTS FOLDERS!
 
-open cmd or powershell and type for help:
+open powershell and dircet it to the folder the script is in and type for help:
 
 	.\PowerOrganize.ps1 -Help
 
