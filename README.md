@@ -10,7 +10,7 @@ open cmd or powershell and type for help:
 
 Help Exerpt:
 
-	PowerOrganize v2.1
+	PowerOrganize v2.3
 	PowerOrganize.ps1 is used to organize files based on filetype, and date.
 	WARNING! DO NOT USE IF FOLDER INTEGRITY IS NESSECARY
 	
