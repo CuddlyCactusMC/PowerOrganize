@@ -12,7 +12,7 @@ Help Exerpt:
 
 	PowerOrganize v2.1
 	PowerOrganize.ps1 is used to organize files based on filetype, and date.
-	WARNING! DO NOT USE THE -Yank FUNCTION IF FOLDER INTEGRITY IS NESSECARY
+	WARNING! DO NOT USE IF FOLDER INTEGRITY IS NESSECARY
 	
 	Command:               Description:
 	-RF "pathtofolder"     This is the path of the folder to organize.
