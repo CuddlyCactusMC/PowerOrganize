@@ -71,7 +71,7 @@ Get-ChildItem -Path $Path -Recurse -File |
             Where-Object { $_.Count -gt 1 }
     }
 }
-function Organize-Files {
+function Organize-Date {
 [CmdletBinding()]
 Param(
    [Parameter(Mandatory=$true)] 
@@ -272,9 +272,9 @@ $file_md5_same_non_overwrite_arrary = @()
 }
 function Show-Help
 {
-    Write-Host 'PowerOrganize v2.1'
+    Write-Host 'PowerOrganize v2.3'
     Write-Host 'PowerOrganize.ps1 is used to organize files based on filetype, and date.'
-    Write-Host 'WARNING! DO NOT USE THE -Yank FUNCTION IF FOLDER INTEGRITY IS NESSECARY'
+    Write-Host 'WARNING! DO NOT USE IF FOLDER INTEGRITY IS NESSECARY'
     Write-Host
     Write-Host 'Command:               Description:'
     Write-Host '-RF "pathtofolder"     This is the path of the folder to organize.'
@@ -287,27 +287,29 @@ function Show-Help
     Write-Host 'Example:'
     Write-Host '.\PowerOrganize.ps1 -RF "C:\Users\Joe\Documents" -XC "C:\Windows, C:\Settings" -Type -NoDupe'
 }
-function Yank
-{
+#depreciated
+#function Yank
+#{
 	#Yank all files out of all folders (dont force overwrite)
-	gci $RF -Recurse -File -Exclude $XC | Move-Item -Destination $RF
-}
+#	gci $RF -Recurse -File -Exclude $XC | Move-Item -Destination $RF
+#}
 function Force-Yank
 {
 	#Yank all files out of all folders (force overwrite)
 	gci $RF -Recurse -File -Exclude $XC | Move-Item -Destination $RF -Force
 }
-function Refile
-{
+#Depreciated
+#function Refile
+#{
 	# get a list of files grouped by extension
-	$files = gci $RF | Where-Object { -not $_.PSisContainer } | Group-Object Extension
+#	$files = gci $RF | Where-Object { -not $_.PSisContainer } | Group-Object Extension
 	# create a subfolder for each type if necessary
-	$files | ForEach-Object { New-Item -itemType directory -path $typeorg\$($_.Name) -ea SilentlyContinue }
+#	$files | ForEach-Object { New-Item -itemType directory -path $typeorg\$($_.Name) -ea SilentlyContinue }
 	# move files into the appropriate subfolder
-	$files | ForEach-Object { $_.Group | Move-Item -destination $typeorg\$($_.Extension)\$($_.Name) }
+#	$files | ForEach-Object { $_.Group | Move-Item -destination $typeorg\$($_.Extension)\$($_.Name) }
     Move-Item -Path "$typeorg\*" -Destination "$RF" -Force
 }
-function Force-Refile
+function Organize-Type
 {
 	# get a list of files grouped by extension
 	$files = gci $RF | Where-Object { -not $_.PSisContainer } | Group-Object Extension
@@ -328,18 +330,18 @@ else
   {
     if ($NoDupe -eq $true)
     {
-        Delete-Duplicates -Path "$RF"
+        Remove-Duplicates -Path "$RF"
     }
     if ($Date -eq $true)
     {
-    Organize-Files -src "$RF" -target "$dateorg" -doit -force
+    Organize-Date -src "$RF" -target "$dateorg" -doit -force
     Remove-Item "$RF\*" -Recurse -Force
     Move-Item -Path "$dateorg\*" -Destination "$RF" -Force
     }
     if ($Type -eq $true)
     {
    		Force-Yank
-		Force-Refile
+		Organize-Type
     }
   }
 }
