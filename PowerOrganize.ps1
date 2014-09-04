@@ -293,7 +293,7 @@ function Show-Help
 	#Yank all files out of all folders (dont force overwrite)
 #	gci $RF -Recurse -File -Exclude $XC | Move-Item -Destination $RF
 #}
-function Force-Yank
+function De-Subfolder
 {
 	#Yank all files out of all folders (force overwrite)
 	gci $RF -Recurse -File -Exclude $XC | Move-Item -Destination $RF -Force
@@ -340,7 +340,7 @@ else
     }
     if ($Type -eq $true)
     {
-   		Force-Yank
+   		De-Subfolder
 		Organize-Type
     }
   }
