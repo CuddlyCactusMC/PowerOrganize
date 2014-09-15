@@ -6,6 +6,8 @@
         Copy-Item "License.lic" -Destination "$poh" -Force
         Copy-Item "PowerOrganize.ps1" -Destination "$poh" -Force
         Copy-Item "README.md" -Destination "$poh" -Force
+        Copy-Item "Launcher.ps1" -Destination "$poh" -Force
+        Copy-Item "Pre-Launcher.bat" -Destination "$poh" -Force
 }
 Function Do-Exit
 {
@@ -95,10 +97,12 @@ Switch ($l)
     "y*" 
     {
         Do-Copy
+        Do-Exit
     }
     "s*" 
     {
         Do-Copy
+        Do-Exit
     }
     "n*" 
     {
