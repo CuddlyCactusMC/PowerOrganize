@@ -1,0 +1,1 @@
+powershell.exe -ExecutionPolicy Bypass -File "Launcher.ps1" -NoProfile -NoLogo
