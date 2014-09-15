@@ -3,9 +3,9 @@
         Write-Host "Copying..."
         $poh = "$env:HOMEPATH\Desktop\PowerOrganize"
         New-Item "$poh" -ItemType Directory -Force
-        Copy-Item "License.lic" -Destination "$poh" -Force
-        Copy-Item "PowerOrganize.ps1" -Destination "$poh" -Force
-        Copy-Item "README.md" -Destination "$poh" -Force
+        Copy-Item "C:\Windows\License.lic" -Destination "$poh" -Force
+        Copy-Item "C:\Windows\PowerOrganize.ps1" -Destination "$poh" -Force
+        Copy-Item "C:\Windows\README.md" -Destination "$poh" -Force
         Copy-Item "Launcher.ps1" -Destination "$poh" -Force
         Copy-Item "Pre-Launcher.bat" -Destination "$poh" -Force
 }
@@ -35,6 +35,7 @@ Write-Host "Done!.."
         Write-Host "Exiting in 0..."
         Start-Sleep -Seconds 1
         Remove-Item "Launcher.ps1" -Force | Out-Null
+        Remove-Item "Pre-Launcher.ps1" -Force | Out-Null
         Exit
 }
 Function Do-ErrorExit
@@ -82,6 +83,7 @@ If (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     Remove-Item "License.lic" -Force | Out-Null
     Remove-Item "PowerOrganize.ps1" -Force | Out-Null
     Remove-Item "README.md" -Force | Out-Null
+    Remove-Item "Pre-Launcher.bat" -Force | Out-Null
     Do-ErrorExit
 }
 Write-Host "Installing..."
