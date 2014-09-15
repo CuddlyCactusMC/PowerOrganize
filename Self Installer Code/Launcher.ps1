@@ -47,7 +47,7 @@ Move-Item "License.lic" -Destination "C:\Windows" -Force
 Move-Item "PowerOrganize.ps1" -Destination "C:\Windows" -Force
 Move-Item "README.md" -Destination "C:\Windows" -Force
 Write-Host "Done!.."
-$q = Read-Host "Would you like a copy of the code placed on your desktop?>y/n"
+$q = Read-Host "Would you like a copy of the code placed on your desktop?(y/n)>"
 $l = $q.ToLower()
 Switch ($l)
 {
