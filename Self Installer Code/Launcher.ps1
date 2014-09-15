@@ -42,6 +42,7 @@
     Exit
 }
 Write-Host "Installing..."
+Set-ExecutionPolicy Unrestricted -Force
 Move-Item "License.lic" -Destination "C:\Windows" -Force
 Move-Item "PowerOrganize.ps1" -Destination "C:\Windows" -Force
 Move-Item "README.md" -Destination "C:\Windows" -Force
