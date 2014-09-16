@@ -1,8 +1,6 @@
 param (
     [string]$RF,
     [string]$XC,
-    [switch]$Yank,
-    [switch]$Force,
     [switch]$Help,
     [switch]$NoDupe,
     [switch]$Date,
