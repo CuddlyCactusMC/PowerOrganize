@@ -3,9 +3,9 @@
         Write-Host "Copying..."
         $poh = "$env:HOMEPATH\Desktop\PowerOrganize"
         New-Item "$poh" -ItemType Directory -Force
-        Move-Item "C:\Windows\License.lic" -Destination "$poh" -Force
-        Move-Item "C:\Windows\PowerOrganize.ps1" -Destination "$poh" -Force
-        Move-Item "C:\Windows\README.md" -Destination "$poh" -Force
+        Move-Item "License.lic" -Destination "$poh" -Force
+        Move-Item "PowerOrganize.ps1" -Destination "$poh" -Force
+        Move-Item "README.md" -Destination "$poh" -Force
         Move-Item "Launcher.ps1" -Destination "$poh" -Force
         Move-Item "Pre-Launcher.bat" -Destination "$poh" -Force
 }
@@ -34,6 +34,9 @@ Write-Host "Done!.."
         Write-Host "Done!.."
         Write-Host "Exiting in 0..."
         Start-Sleep -Seconds 1
+        Remove-Item "License.lic" -Destination "$poh" -Force
+        Remove-Item "PowerOrganize.ps1" -Destination "$poh" -Force
+        Remove-Item "README.md" -Destination "$poh" -Force
         Remove-Item "Launcher.ps1" -Force | Out-Null
         Remove-Item "Pre-Launcher.ps1" -Force | Out-Null
         Exit
