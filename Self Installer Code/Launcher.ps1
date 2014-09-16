@@ -34,9 +34,9 @@ Write-Host "Done!.."
         Write-Host "Done!.."
         Write-Host "Exiting in 0..."
         Start-Sleep -Seconds 1
-        Remove-Item "License.lic" -Destination "$poh" -Force | Out-Null
-        Remove-Item "PowerOrganize.ps1" -Destination "$poh" -Force | Out-Null
-        Remove-Item "README.md" -Destination "$poh" -Force | Out-Null
+        Remove-Item "License.lic" -Force | Out-Null
+        Remove-Item "PowerOrganize.ps1" -Force | Out-Null
+        Remove-Item "README.md" -Force | Out-Null
         Remove-Item "Launcher.ps1" -Force | Out-Null
         Remove-Item "Pre-Launcher.ps1" -Force | Out-Null
         Exit
