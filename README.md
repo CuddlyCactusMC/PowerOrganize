@@ -4,7 +4,9 @@ PowerOrganize requires the latest Powershell and .NET release(You should update 
 
 THIS PROGRAM, IF RUN ON A WINDOWS SYSTEM FOLDER WILL DESTROY ITS FILE STRUCTURE, USE THIS PROGRAM ONLY ON DOCUMENTS FOLDERS!
 
-open powershell and direct it to the folder the script is in and type for help:
+It is reccomended that you use the Self Installer as it automatically adds PowerOrganize to your Windows PATH and sets the proper ExecutionPolicy.(Installers can be found on the GitHub page under "CuddlyCactusMC/PowerOrganize/Installers")
+
+Open powershell and direct it to the folder the script is in and type for help:
 
 	.\PowerOrganize.ps1 -Help
 
