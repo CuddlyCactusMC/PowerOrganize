@@ -3,11 +3,11 @@
         Write-Host "Copying..."
         $poh = "$env:HOMEPATH\Desktop\PowerOrganize"
         New-Item "$poh" -ItemType Directory -Force
-        Copy-Item "C:\Windows\License.lic" -Destination "$poh" -Force
-        Copy-Item "C:\Windows\PowerOrganize.ps1" -Destination "$poh" -Force
-        Copy-Item "C:\Windows\README.md" -Destination "$poh" -Force
-        Copy-Item "Launcher.ps1" -Destination "$poh" -Force
-        Copy-Item "Pre-Launcher.bat" -Destination "$poh" -Force
+        Move-Item "C:\Windows\License.lic" -Destination "$poh" -Force
+        Move-Item "C:\Windows\PowerOrganize.ps1" -Destination "$poh" -Force
+        Move-Item "C:\Windows\README.md" -Destination "$poh" -Force
+        Move-Item "Launcher.ps1" -Destination "$poh" -Force
+        Move-Item "Pre-Launcher.bat" -Destination "$poh" -Force
 }
 Function Do-Exit
 {
@@ -88,9 +88,9 @@ If (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 }
 Write-Host "Installing..."
 Set-ExecutionPolicy Unrestricted -Force
-Move-Item "License.lic" -Destination "C:\Windows" -Force
-Move-Item "PowerOrganize.ps1" -Destination "C:\Windows" -Force
-Move-Item "README.md" -Destination "C:\Windows" -Force
+Copy-Item "License.lic" -Destination "C:\Windows" -Force
+Copy-Item "PowerOrganize.ps1" -Destination "C:\Windows" -Force
+Copy-Item "README.md" -Destination "C:\Windows" -Force
 Write-Host "Done!.."
 $q = Read-Host "Would you like a copy of the code placed on your desktop?(y/n)>"
 $l = $q.ToLower()
