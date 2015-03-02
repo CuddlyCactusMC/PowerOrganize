@@ -161,12 +161,12 @@ foreach ($file in $Files)
         }
     $DateTaken = $strYear + $strMonth + $strDay
     $MonthTaken = $strYear + $strMonth
-    $file | Add-Member –MemberType NoteProperty –Name myDataTaken –Value $DateTaken
-    $file | Add-Member –MemberType NoteProperty –Name myMonth –Value $MonthTaken
-    $file | Add-Member –MemberType NoteProperty –Name myYear –Value $strYear
+    $file | Add-Member -MemberType "NoteProperty" -Name "myDataTaken" -Value $DateTaken
+    $file | Add-Member -MemberType "NoteProperty" -Name "myMonth" -Value $MonthTaken
+    $file | Add-Member -MemberType "NoteProperty" -Name "myYear" -Value $strYear
     
     $myDataTaken = $file.myDataTaken
-    Write-verbose "$full_name -> DayTaken: $myDataTaken,MonthTaken:$MonthTaken,YearTaken:$strYear   "
+    Write-verbose "$full_name -> DayTaken: $myDataTaken,MonthTaken:$MonthTaken,YearTaken:$strYear"
     $want_files += ,$file
     } 
 }
@@ -291,8 +291,7 @@ function Show-Help
 	#Yank all files out of all folders (dont force overwrite)
 #	gci $RF -Recurse -File -Exclude $XC | Move-Item -Destination $RF
 #}
-function De-Subfolder
-{
+function De-Subfolder{
 	#Yank all files out of all folders (force overwrite)
 	gci $RF -Recurse -File -Exclude $XC | Move-Item -Destination $RF -Force
 }
@@ -306,7 +305,7 @@ function De-Subfolder
 	# move files into the appropriate subfolder
 #	$files | ForEach-Object { $_.Group | Move-Item -destination $typeorg\$($_.Extension)\$($_.Name) }
     Move-Item -Path "$typeorg\*" -Destination "$RF" -Force
-}
+#}
 function Organize-Type
 {
 	# get a list of files grouped by extension
